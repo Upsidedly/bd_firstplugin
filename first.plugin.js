@@ -9,9 +9,27 @@
  */
 
 module.exports = class FirstPlugin {
-    load() {
-        BdApi.alert('hi thanks for getting dis')
-    }
-    start() {}
-    stop() {}
-}
+  load() {
+    BdApi.alert("hi thanks for getting dis");
+  }
+  start() {
+    BdApi.showConfirmationModal(
+      "Test",
+      [
+        "This is not a link. ",
+        BdApi.React.createElement(
+          "a",
+          { href: "https://google.com", target: "_blank" },
+          "This is a link."
+        ),
+        " This is not.",
+      ],
+      {
+        danger: true,
+        confirmText: "Oh No",
+        cancelText: "Go Back",
+      }
+    );
+  }
+  stop() {}
+};
