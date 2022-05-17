@@ -10,24 +10,17 @@
 
 module.exports = class FirstPlugin {
   load() {
-    BdApi.alert("hi thanks for getting dis");
+    BdApi.alert('What\'s New', 'Nothing really laff out loud');
   }
   start() {
     BdApi.showConfirmationModal(
-      "Test",
+      'Thanks for opening!',
       [
-        "This is not a link. ",
-        BdApi.React.createElement(
-          "a",
-          { href: "https://google.com", target: "_blank" },
-          "This is a link."
-        ),
-        " This is not.",
+        '2 plus two is 4 tbh'
       ],
       {
-        danger: true,
-        confirmText: "Oh No",
-        cancelText: "Go Back",
+        confirmText: "ur right",
+        cancelText: "no dumbass",
       }
     );
   }
